@@ -1,0 +1,17 @@
+# Project Images Placeholder
+
+This folder contains project images. You can add your actual project screenshots here:
+
+- job-portal.jpg - Screenshot of your Job Portal application
+- wegive.jpg - Screenshot of your WeGive donation platform
+- portfolio.jpg - Screenshot of this portfolio website
+
+For now, the portfolio will use placeholder images. To add real images:
+1. Add your project screenshots to this folder
+2. Name them exactly as referenced in the code:
+   - job-portal.jpg
+   - wegive.jpg
+   - portfolio.jpg
+3. The images will automatically appear in the portfolio
+
+Recommended image size: 400x250 pixels for best display
