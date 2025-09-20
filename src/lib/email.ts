@@ -12,7 +12,7 @@ const getEnv = () => {
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined
 
   if (!serviceId || !templateId || !publicKey) {
-    throw new Error('Email service is not configured. Missing VITE_EMAILJS_* env vars.')
+    throw new Error('Email service is not configured. Please set up EmailJS environment variables. Check the README for setup instructions.')
   }
 
   return { serviceId, templateId, publicKey }

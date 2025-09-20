@@ -42,8 +42,9 @@ export default function Contact() {
       setSuccess('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' });
     } catch (err) {
-      setError('Failed to send message. Please try again later.');
-      console.error(err);
+      const errorMessage = err instanceof Error ? err.message : 'Failed to send message. Please try again later.';
+      setError(errorMessage);
+      console.error('Contact form error:', err);
     } finally {
       setIsSubmitting(false);
     }

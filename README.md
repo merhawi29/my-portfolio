@@ -1,6 +1,78 @@
-# React + TypeScript + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, TypeScript, and Vite. Features a contact form with EmailJS integration, dark mode support, and a clean, professional design.
+
+## Features
+
+- 🎨 Modern UI with Tailwind CSS
+- 🌙 Dark mode support
+- 📱 Fully responsive design
+- 📧 Contact form with EmailJS integration
+- ⚡ Fast performance with Vite
+- 🔒 Type-safe with TypeScript
+- 🎯 Form validation with Zod
+
+## Setup
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Set up EmailJS for contact form functionality:
+   - Go to [EmailJS](https://www.emailjs.com/) and create an account
+   - Create a new service (Gmail, Outlook, etc.)
+   - Create an email template
+   - Get your Service ID, Template ID, and Public Key
+
+4. Create a `.env` file in the root directory:
+   ```env
+   VITE_EMAILJS_SERVICE_ID=your_service_id_here
+   VITE_EMAILJS_TEMPLATE_ID=your_template_id_here
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
+   ```
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+### EmailJS Setup Instructions
+
+1. **Create an EmailJS account** at [emailjs.com](https://www.emailjs.com/)
+
+2. **Add an Email Service**:
+   - Go to Email Services in your dashboard
+   - Click "Add New Service"
+   - Choose your email provider (Gmail, Outlook, etc.)
+   - Follow the setup instructions
+
+3. **Create an Email Template**:
+   - Go to Email Templates
+   - Click "Create New Template"
+   - Use these template variables:
+     - `{{from_name}}` - sender's name
+     - `{{reply_to}}` - sender's email
+     - `{{message}}` - message content
+   - Save the template and note the Template ID
+
+4. **Get your Public Key**:
+   - Go to Account > General
+   - Copy your Public Key
+
+5. **Update your .env file** with the actual values from steps 2-4
+
+## Development
+
+This project uses Vite for fast development and building.
 
 Currently, two official plugins are available:
 

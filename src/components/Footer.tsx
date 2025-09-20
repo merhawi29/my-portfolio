@@ -29,7 +29,7 @@ export default function Footer() {
                 <FaLinkedin size={20} />
               </a>
               <a
-                href="mailto:merhawi@example.com"
+                href="mailto:merhawinguse29@gmail.com"
                 className="p-2 bg-gray-800 hover:bg-indigo-600 rounded-full transition-colors duration-200"
               >
                 <FaEnvelope size={20} />
@@ -53,7 +53,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold text-white mb-4">Get In Touch</h4>
             <div className="space-y-2 text-gray-300">
-              <p>📧 merhawi@example.com</p>
+              <p>📧 merhawinguse29@gmail.com</p>
               <p>🌍 Available for remote work</p>
               <p>💼 Open to new opportunities</p>
             </div>

@@ -7,13 +7,10 @@ import {
   FaHtml5, 
   FaCss3Alt, 
   FaGitAlt, 
-  FaNodeJs,
-  FaPython,
-  FaDocker,
   FaAws,
   FaBootstrap
 } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss, SiMysql, SiPostgresql, SiMongodb } from "react-icons/si";
+import { SiTypescript, SiTailwindcss, SiPostgresql, SiFigma } from "react-icons/si";
 
 export default function Skills() {
   const [visibleSkills, setVisibleSkills] = useState<number[]>([]);
@@ -25,15 +22,12 @@ export default function Skills() {
     { name: "JavaScript", icon: FaJs, color: "text-yellow-500", level: 85 },
     { name: "MySQL", icon: FaDatabase, color: "text-orange-500", level: 80 },
     { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-700", level: 75 },
-    { name: "MongoDB", icon: SiMongodb, color: "text-green-600", level: 70 },
     { name: "HTML5", icon: FaHtml5, color: "text-orange-600", level: 90 },
     { name: "CSS3", icon: FaCss3Alt, color: "text-blue-500", level: 85 },
     { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-500", level: 85 },
     { name: "Bootstrap", icon: FaBootstrap, color: "text-purple-500", level: 80 },
-    { name: "Node.js", icon: FaNodeJs, color: "text-green-500", level: 75 },
-    { name: "Python", icon: FaPython, color: "text-yellow-600", level: 70 },
+    { name: "Figma", icon: SiFigma, color: "text-pink-500", level: 80 },
     { name: "Git", icon: FaGitAlt, color: "text-red-600", level: 85 },
-    { name: "Docker", icon: FaDocker, color: "text-blue-600", level: 70 },
     { name: "AWS", icon: FaAws, color: "text-orange-500", level: 65 },
   ];
 

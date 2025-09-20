@@ -30,8 +30,8 @@ export default function Home() {
           </h2>
           
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            Passionate about creating beautiful, functional web applications with modern technologies. 
-            Specializing in Laravel, React, and MySQL.
+            Experienced Full-Stack Developer with expertise in building scalable web applications using cutting-edge technologies. 
+            Proficient in Laravel, React, TypeScript, and modern database solutions.
           </p>
 
           {/* Tech Stack */}
