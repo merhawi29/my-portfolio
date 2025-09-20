@@ -33,7 +33,7 @@ export default function Contact() {
     setSuccess(null);
     const parsed = formSchema.safeParse(formData);
     if (!parsed.success) {
-      setError(parsed.error.errors[0]?.message ?? 'Invalid form');
+      setError(parsed.error.issues[0]?.message ?? 'Invalid form');
       return;
     }
     try {
