@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Site configuration
+[context.production]
+  command = "npm run build"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
