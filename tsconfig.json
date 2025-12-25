@@ -1,4 +1,13 @@
 {
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["node"],          // <--- add this line
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
