@@ -16,7 +16,7 @@ export default function Footer() {
                 href="https://github.com/merhawi29"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-800 hover:bg-indigo-600 rounded-full transition-colors duration-200"
+                className="p-2 bg-gray-800 dark:bg-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-500 rounded-full transition-colors duration-200 text-white"
               >
                 <FaGithub size={20} />
               </a>
@@ -24,13 +24,13 @@ export default function Footer() {
                 href="https://linkedin.com/in/merhawi-nguse"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-800 hover:bg-indigo-600 rounded-full transition-colors duration-200"
+                className="p-2 bg-gray-800 dark:bg-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-500 rounded-full transition-colors duration-200 text-white"
               >
                 <FaLinkedin size={20} />
               </a>
               <a
                 href="mailto:merhawinguse29@gmail.com"
-                className="p-2 bg-gray-800 hover:bg-indigo-600 rounded-full transition-colors duration-200"
+                className="p-2 bg-gray-800 dark:bg-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-500 rounded-full transition-colors duration-200 text-white"
               >
                 <FaEnvelope size={20} />
               </a>
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 pt-8">
+        <div className="border-t border-gray-700 dark:border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © {new Date().getFullYear()} Merhawi Nguse. All rights reserved.

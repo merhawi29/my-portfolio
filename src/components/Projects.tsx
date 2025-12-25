@@ -3,6 +3,24 @@ import { FaGithub, FaExternalLinkAlt, FaLaravel, FaReact, FaDatabase } from "rea
 export default function Projects() {
   const projects = [
     {
+      title: "Tip Top - Payment Platform",
+      description: "A Laravel-based payment and tipping platform with Chapa payment integration, Cloudinary image hosting, and email notifications. Features secure transaction processing and user management.",
+      image: "/Images/projects/tip-top.jpg",
+      github: "https://github.com/abrishk26/tip-top",
+      live: "#",
+      technologies: ["Laravel", "PHP", "MySQL", "Chapa API"],
+      icons: [FaLaravel, FaDatabase]
+    },
+    {
+      title: "Fremnatos Charity Platform",
+      description: "A comprehensive charity management platform built with Laravel and TypeScript. Features donation management, campaign tracking, and administrative tools for charity organizations.",
+      image: "/Images/projects/fremnatos-charity.jpg",
+      github: "https://github.com/kiflomm/fremnatoscharity",
+      live: "#",
+      technologies: ["Laravel", "TypeScript", "MySQL", "React"],
+      icons: [FaLaravel, FaReact]
+    },
+    {
       title: "Job Portal Web Application",
       description: "A comprehensive job platform with advanced search, filtering, and application management features. Built with Laravel backend and modern frontend technologies.",
       image: "/Images/projects/job-portal.jpg",

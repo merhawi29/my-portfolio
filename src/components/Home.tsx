@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 py-20">
+    <section id="home" className="min-h-screen flex items-center justify-center px-6 py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-4xl mx-auto text-center">
         {/* Profile Image without Animation */}
         <div className="relative mb-8">

@@ -49,7 +49,7 @@ export default function About() {
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg">
                 <div className="flex items-center space-x-3">
-                  <FaCode className="text-2xl text-indigo-600" />
+                  <FaCode className="text-2xl text-indigo-600 dark:text-indigo-400" />
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white">3+ Years</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-300">Experience</p>
@@ -59,7 +59,7 @@ export default function About() {
               
               <div className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg">
                 <div className="flex items-center space-x-3">
-                  <FaRocket className="text-2xl text-purple-600" />
+                  <FaRocket className="text-2xl text-purple-600 dark:text-purple-400" />
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white">20+ Projects</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-300">Completed</p>
@@ -71,7 +71,7 @@ export default function About() {
             {/* Skills Highlight */}
             <div className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg">
               <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-                <FaGraduationCap className="text-indigo-600 mr-2" />
+                <FaGraduationCap className="text-indigo-600 dark:text-indigo-400 mr-2" />
                 Technical Expertise
               </h4>
               <div className="flex flex-wrap gap-2">
@@ -88,7 +88,7 @@ export default function About() {
 
             {/* Location */}
             <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
-              <FaMapMarkerAlt className="text-indigo-600" />
+              <FaMapMarkerAlt className="text-indigo-600 dark:text-indigo-400" />
               <span>Based in Mek'ele, Ethiopia</span>
             </div>
           </div>

@@ -4,7 +4,7 @@ import { useTheme } from "../contexts/ThemeContext";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, resetTheme } = useTheme();
 
   const navItems = [
     { href: "#home", label: "Home" },
@@ -38,14 +38,25 @@ export default function Navbar() {
         {/* Theme Toggle & Mobile Menu Button */}
         <div className="flex items-center space-x-4">
           <button
-            onClick={() => {
-              console.log('Toggle button clicked, current theme:', theme);
-              toggleTheme();
-            }}
+            onClick={toggleTheme}
             className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
             aria-label="Toggle theme"
+            title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
           >
             {theme === 'light' ? <FaMoon /> : <FaSun />}
+          </button>
+          {/* Debug: Reset button (double-click to reset) */}
+          <button
+            onDoubleClick={(e) => {
+              e.preventDefault();
+              resetTheme();
+              alert('Theme reset to light mode!');
+            }}
+            className="hidden p-1 text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+            title="Double-click to reset theme"
+            style={{ fontSize: '10px' }}
+          >
+            Reset
           </button>
           
           <button

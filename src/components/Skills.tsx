@@ -8,27 +8,31 @@ import {
   FaCss3Alt, 
   FaGitAlt, 
   FaAws,
-  FaBootstrap
+  FaBootstrap,
+  FaNodeJs
 } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss, SiPostgresql, SiFigma } from "react-icons/si";
+import { SiTypescript, SiTailwindcss, SiPostgresql, SiFigma, SiNextdotjs, SiN8N } from "react-icons/si";
 
 export default function Skills() {
   const [visibleSkills, setVisibleSkills] = useState<number[]>([]);
 
   const skills = [
-    { name: "Laravel", icon: FaLaravel, color: "text-red-500", level: 90 },
-    { name: "React", icon: FaReact, color: "text-blue-500", level: 85 },
-    { name: "TypeScript", icon: SiTypescript, color: "text-blue-600", level: 80 },
-    { name: "JavaScript", icon: FaJs, color: "text-yellow-500", level: 85 },
-    { name: "MySQL", icon: FaDatabase, color: "text-orange-500", level: 80 },
-    { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-700", level: 75 },
-    { name: "HTML5", icon: FaHtml5, color: "text-orange-600", level: 90 },
-    { name: "CSS3", icon: FaCss3Alt, color: "text-blue-500", level: 85 },
-    { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-500", level: 85 },
-    { name: "Bootstrap", icon: FaBootstrap, color: "text-purple-500", level: 80 },
-    { name: "Figma", icon: SiFigma, color: "text-pink-500", level: 80 },
+    { name: "Laravel", icon: FaLaravel, color: "text-red-500", level: 100 },
+    { name: "React", icon: FaReact, color: "text-blue-500", level: 100 },
+    { name: "Next.js", icon: SiNextdotjs, color: "text-black dark:text-white", level: 95 },
+    { name: "Node.js", icon: FaNodeJs, color: "text-green-600", level: 80 },
+    { name: "AI Automation", icon: SiN8N, color: "text-purple-600", level: 90 },
+    { name: "TypeScript", icon: SiTypescript, color: "text-blue-600", level: 90 },
+    { name: "JavaScript", icon: FaJs, color: "text-yellow-500", level: 95 },
+    { name: "MySQL", icon: FaDatabase, color: "text-orange-500", level: 100 },
+    { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-700", level: 85 },
+    { name: "HTML5", icon: FaHtml5, color: "text-orange-600", level: 100 },
+    { name: "CSS3", icon: FaCss3Alt, color: "text-blue-500", level: 80 },
+    { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-500", level: 90 },
+    { name: "Bootstrap", icon: FaBootstrap, color: "text-purple-500", level: 100 },
+    { name: "Figma", icon: SiFigma, color: "text-pink-500", level: 100 },
     { name: "Git", icon: FaGitAlt, color: "text-red-600", level: 85 },
-    { name: "AWS", icon: FaAws, color: "text-orange-500", level: 65 },
+    { name: "AWS", icon: FaAws, color: "text-orange-500", level: 75 },
   ];
 
   useEffect(() => {
