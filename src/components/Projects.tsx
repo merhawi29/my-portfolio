@@ -1,71 +1,11 @@
-import { FaGithub, FaExternalLinkAlt, FaLaravel, FaReact, FaDatabase, FaNodeJs, FaVuejs } from "react-icons/fa";
+import { useState } from "react";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { projects } from "../data/projects";
+import ProjectDetail from "./ProjectDetail";
+import type { Project } from "../data/projects";
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "Attendance for Employees",
-      description: "An employee attendance management system with check-in/check-out tracking, work hour calculations, and admin dashboard for monitoring employee attendance records.",
-      image: "/Images/projects/attendance.jpg",
-      github: "https://github.com/merhawi29/AttendanceforEmployees",
-      live: "https://attendancefor-employees-zeta.vercel.app/",
-      technologies: ["Laravel", "Vue.js", "MySQL", "Bootstrap"],
-      icons: [FaLaravel, FaVuejs]
-    },
-    {
-      title: "FreeTalk - Chat Application",
-      description: "A real-time chat application enabling users to communicate instantly. Features include user authentication, messaging, and a clean modern interface.",
-      image: "/Images/projects/freetalk.jpg",
-      github: "https://github.com/merhawi29/freetalk",
-      live: "https://freetalk1.vercel.app/",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-      icons: [FaReact, FaNodeJs]
-    },
-    {
-      title: "Tip Top - Payment Platform",
-      description: "A Laravel-based payment and tipping platform with Chapa payment integration, Cloudinary image hosting, and email notifications. Features secure transaction processing and user management.",
-      image: "/Images/projects/tip-top.jpg",
-      github: "https://github.com/abrishk26/tip-top",
-      live: "#",
-      technologies: ["Laravel", "PHP", "MySQL", "Chapa API"],
-      icons: [FaLaravel, FaDatabase]
-    },
-    {
-      title: "Fremnatos Charity Platform",
-      description: "A comprehensive charity management platform built with Laravel and TypeScript. Features donation management, campaign tracking, and administrative tools for charity organizations.",
-      image: "/Images/projects/fremnatos-charity.jpg",
-      github: "https://github.com/kiflomm/fremnatoscharity",
-      live: "#",
-      technologies: ["Laravel", "TypeScript", "MySQL", "React"],
-      icons: [FaLaravel, FaReact]
-    },
-    {
-      title: "Job Portal Web Application",
-      description: "A comprehensive job platform with advanced search, filtering, and application management features. Built with Laravel backend and modern frontend technologies.",
-      image: "/Images/projects/job-portal.jpg",
-      github: "https://github.com/merhawi29/Jobportal",
-      live: "#",
-      technologies: ["Laravel", "MySQL", "Bootstrap", "JavaScript"],
-      icons: [FaLaravel, FaDatabase]
-    },
-    {
-      title: "WeGive – Online Donation Platform",
-      description: "A secure donation management system with payment integration, donor tracking, and campaign management. Features real-time analytics and reporting.",
-      image: "/Images/projects/wegive.jpg",
-      github: "https://github.com/merhawi29/wigive",
-      live: "#",
-      technologies: ["Laravel", "MySQL", "Stripe API", "Vue.js"],
-      icons: [FaLaravel, FaDatabase]
-    },
-    {
-      title: "Portfolio Website",
-      description: "A modern, responsive portfolio website built with React and Tailwind CSS. Features dark mode, smooth animations, and mobile-first design.",
-      image: "/Images/projects/portfolio.jpg",
-      github: "https://github.com/merhawi29/portfolio",
-      live: "#",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-      icons: [FaReact, FaDatabase]
-    }
-  ];
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <section id="projects" className="py-20 px-6 bg-white dark:bg-gray-900">
@@ -82,8 +22,9 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
-              key={project.title}
-              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden animate-fade-in-up"
+              key={project.id}
+              onClick={() => setSelectedProject(project)}
+              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden animate-fade-in-up cursor-pointer"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Project Image */}
@@ -93,21 +34,20 @@ export default function Projects() {
                   alt={project.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   onError={(e) => {
-                    // Fallback to a gradient background if image fails to load
                     const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
+                    target.style.display = "none";
                     const parent = target.parentElement;
                     if (parent) {
                       parent.innerHTML = `
                         <div class="w-full h-48 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-2xl font-bold">
-                          ${project.title.split(' ')[0]}
+                          ${project.title.split(" ")[0]}
                         </div>
                       `;
                     }
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 {/* Project Links */}
                 <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
@@ -115,17 +55,21 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-white/90 dark:bg-gray-800/90 rounded-full hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <FaGithub className="text-gray-700 dark:text-gray-300" />
                   </a>
-                  <a
-                    href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-                    className="p-2 bg-white/90 dark:bg-gray-800/90 rounded-full hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200"
-                  >
-                    <FaExternalLinkAlt className="text-gray-700 dark:text-gray-300" />
-                  </a>
+                  {project.live !== "#" && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-white/90 dark:bg-gray-800/90 rounded-full hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <FaExternalLinkAlt className="text-gray-700 dark:text-gray-300" />
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -134,9 +78,9 @@ export default function Projects() {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
-                  {project.description}
+                  {project.shortDescription}
                 </p>
 
                 {/* Technologies */}
@@ -160,6 +104,11 @@ export default function Projects() {
                     />
                   ))}
                 </div>
+
+                {/* View Details Hint */}
+                <p className="mt-4 text-xs text-indigo-500 dark:text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Click to view details →
+                </p>
               </div>
             </div>
           ))}
@@ -178,6 +127,14 @@ export default function Projects() {
           </a>
         </div>
       </div>
+
+      {/* Project Detail Modal */}
+      {selectedProject && (
+        <ProjectDetail
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </section>
   );
 }
