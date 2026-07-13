@@ -3,6 +3,24 @@ import { FaGithub, FaExternalLinkAlt, FaLaravel, FaReact, FaDatabase, FaNodeJs, 
 export default function Projects() {
   const projects = [
     {
+      title: "Attendance for Employees",
+      description: "An employee attendance management system with check-in/check-out tracking, work hour calculations, and admin dashboard for monitoring employee attendance records.",
+      image: "/Images/projects/attendance.jpg",
+      github: "https://github.com/merhawi29/AttendanceforEmployees",
+      live: "https://attendancefor-employees-zeta.vercel.app/",
+      technologies: ["Laravel", "Vue.js", "MySQL", "Bootstrap"],
+      icons: [FaLaravel, FaVuejs]
+    },
+    {
+      title: "FreeTalk - Chat Application",
+      description: "A real-time chat application enabling users to communicate instantly. Features include user authentication, messaging, and a clean modern interface.",
+      image: "/Images/projects/freetalk.jpg",
+      github: "https://github.com/merhawi29/freetalk",
+      live: "https://freetalk1.vercel.app/",
+      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
+      icons: [FaReact, FaNodeJs]
+    },
+    {
       title: "Tip Top - Payment Platform",
       description: "A Laravel-based payment and tipping platform with Chapa payment integration, Cloudinary image hosting, and email notifications. Features secure transaction processing and user management.",
       image: "/Images/projects/tip-top.jpg",
@@ -46,24 +64,6 @@ export default function Projects() {
       live: "#",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
       icons: [FaReact, FaDatabase]
-    },
-    {
-      title: "Attendance for Employees",
-      description: "An employee attendance management system with check-in/check-out tracking, work hour calculations, and admin dashboard for monitoring employee attendance records.",
-      image: "/Images/projects/attendance.jpg",
-      github: "https://github.com/merhawi29/AttendanceforEmployees",
-      live: "https://attendancefor-employees-zeta.vercel.app/",
-      technologies: ["Laravel", "Vue.js", "MySQL", "Bootstrap"],
-      icons: [FaLaravel, FaVuejs]
-    },
-    {
-      title: "FreeTalk - Chat Application",
-      description: "A real-time chat application enabling users to communicate instantly. Features include user authentication, messaging, and a clean modern interface.",
-      image: "/Images/projects/freetalk.jpg",
-      github: "https://github.com/merhawi29/freetalk",
-      live: "https://freetalk1.vercel.app/",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-      icons: [FaReact, FaNodeJs]
     }
   ];
 
