@@ -1,4 +1,4 @@
-import { FaGithub, FaExternalLinkAlt, FaLaravel, FaReact, FaDatabase, FaNodeJs, FaVuejs, FaUsers } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaLaravel, FaReact, FaDatabase, FaNodeJs, FaVuejs } from "react-icons/fa";
 
 export default function Projects() {
   const projects = [
