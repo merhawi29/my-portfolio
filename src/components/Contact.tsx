@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { z } from "zod";
 import { sendContactEmail } from "../lib/email";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
@@ -9,7 +9,45 @@ const formSchema = z.object({
   message: z.string().min(10, 'Message is too short'),
 });
 
+const contactTypewriterTexts = [
+  "Have a project in mind?",
+  "Want to collaborate?",
+  "Need a developer?",
+  "Let's build something amazing!"
+];
+
+function useContactTypewriter(texts: string[], typingSpeed = 100, deletingSpeed = 50, pauseTime = 2000) {
+  const [displayText, setDisplayText] = useState("");
+  const [textIndex, setTextIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentText = texts[textIndex];
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        setDisplayText(currentText.substring(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+        if (charIndex + 1 === currentText.length) {
+          setTimeout(() => setIsDeleting(true), pauseTime);
+        }
+      } else {
+        setDisplayText(currentText.substring(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+        if (charIndex - 1 === 0) {
+          setIsDeleting(false);
+          setTextIndex((textIndex + 1) % texts.length);
+        }
+      }
+    }, isDeleting ? deletingSpeed : typingSpeed);
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, textIndex, texts, typingSpeed, deletingSpeed, pauseTime]);
+
+  return displayText;
+}
+
 export default function Contact() {
+  const typedContactText = useContactTypewriter(contactTypewriterTexts);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -66,8 +104,9 @@ export default function Contact() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Get In <span className="text-indigo-600 dark:text-indigo-400">Touch</span>
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? I'd love to hear from you!
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto min-h-[1.5rem]">
+            {typedContactText}
+            <span className="inline-block w-[3px] h-[1em] bg-indigo-600 dark:bg-indigo-400 ml-1 animate-pulse align-middle" />
           </p>
         </div>
 
@@ -112,7 +151,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Phone</h4>
-                  <p className="text-gray-600 dark:text-gray-300">+251 XXX XXX XXX</p>
+                  <p className="text-gray-600 dark:text-gray-300">0992613985 / 0714613985</p>
                 </div>
               </div>
             </div>
