@@ -15,21 +15,21 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg z-50 transition-colors duration-300">
+    <nav className="fixed top-0 left-0 w-full glass shadow-lg shadow-black/20 z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-xl font-bold text-indigo-600 dark:text-indigo-400">Merhawi Nguse</h1>
+        <h1 className="text-xl font-bold gradient-text">Merhawi Nguse</h1>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-gray-700 dark:text-gray-300 font-medium">
+        <ul className="hidden md:flex space-x-8 text-gray-400 font-medium">
           {navItems.map((item) => (
             <li key={item.href}>
               <a 
                 href={item.href} 
-                className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 relative group"
+                className="hover:text-cyan-400 transition-colors duration-200 relative group"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 dark:bg-indigo-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
             </li>
           ))}
@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-4">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+            className="p-2 rounded-lg glass text-gray-400 hover:text-cyan-400 hover:border-cyan-500/30 transition-all duration-200"
             aria-label="Toggle theme"
             title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
           >
@@ -61,7 +61,7 @@ export default function Navbar() {
           
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-2xl text-gray-700 dark:text-gray-300"
+            className="md:hidden text-2xl text-gray-400 hover:text-cyan-400 transition-colors"
           >
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -70,14 +70,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg">
-          <ul className="flex flex-col items-center space-y-4 py-6 text-gray-700 dark:text-gray-300 font-medium">
+        <div className="md:hidden glass shadow-lg shadow-black/20">
+          <ul className="flex flex-col items-center space-y-4 py-6 text-gray-400 font-medium">
             {navItems.map((item) => (
               <li key={item.href}>
                 <a 
                   href={item.href} 
                   onClick={() => setMenuOpen(false)} 
-                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
+                  className="hover:text-cyan-400 transition-colors duration-200"
                 >
                   {item.label}
                 </a>
