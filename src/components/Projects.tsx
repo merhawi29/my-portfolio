@@ -3,9 +3,17 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { projects } from "../data/projects";
 import ProjectDetail from "./ProjectDetail";
 import type { Project } from "../data/projects";
+import { useTypewriter } from "../hooks/useTypewriter";
+
+const projectsTexts = [
+  "Here are some of my recent projects that showcase my skills and passion for web development",
+  "A collection of work I'm proud of — from full-stack apps to AI automation",
+  "Building solutions that make a difference, one project at a time"
+];
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const typedProjectsText = useTypewriter(projectsTexts, 60, 30, 3000);
 
   return (
     <section id="projects" className="py-20 px-6">
@@ -14,8 +22,9 @@ export default function Projects() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and passion for web development
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto min-h-[1.5rem]">
+            {typedProjectsText}
+            <span className="inline-block w-[3px] h-[1em] bg-cyan-400 ml-1 animate-pulse align-middle" />
           </p>
         </div>
 

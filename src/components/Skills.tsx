@@ -12,9 +12,17 @@ import {
   FaNodeJs
 } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiPostgresql, SiFigma, SiNextdotjs, SiN8N } from "react-icons/si";
+import { useTypewriter } from "../hooks/useTypewriter";
+
+const skillsTexts = [
+  "Here are the technologies and tools I work with to bring ideas to life",
+  "My toolkit for building modern, scalable applications",
+  "Technologies that power my creative workflow"
+];
 
 export default function Skills() {
   const [visibleSkills, setVisibleSkills] = useState<number[]>([]);
+  const typedSkillsText = useTypewriter(skillsTexts, 60, 30, 3000);
 
   const skills = [
     { name: "Laravel", icon: FaLaravel, color: "text-red-400", level: 100 },
@@ -49,8 +57,9 @@ export default function Skills() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Skills & <span className="gradient-text">Technologies</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Here are the technologies and tools I work with to bring ideas to life
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto min-h-[1.5rem]">
+            {typedSkillsText}
+            <span className="inline-block w-[3px] h-[1em] bg-cyan-400 ml-1 animate-pulse align-middle" />
           </p>
         </div>
 

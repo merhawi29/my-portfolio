@@ -1,6 +1,15 @@
 import { FaCode, FaGraduationCap, FaMapMarkerAlt, FaRocket } from "react-icons/fa";
+import { useTypewriter } from "../hooks/useTypewriter";
+
+const aboutTexts = [
+  "Get to know more about my journey, passion, and what drives me as a developer",
+  "Discover my story, my skills, and what makes me tick",
+  "From Mek'ele to the world — building the future, one line at a time"
+];
 
 export default function About() {
+  const typedAboutText = useTypewriter(aboutTexts, 60, 30, 3000);
+
   return (
     <section id="about" className="py-20 px-6">
       <div className="max-w-4xl mx-auto">
@@ -8,8 +17,9 @@ export default function About() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             About <span className="gradient-text">Me</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Get to know more about my journey, passion, and what drives me as a developer
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto min-h-[1.5rem]">
+            {typedAboutText}
+            <span className="inline-block w-[3px] h-[1em] bg-cyan-400 ml-1 animate-pulse align-middle" />
           </p>
         </div>
 
