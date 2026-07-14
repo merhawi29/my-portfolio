@@ -24,8 +24,8 @@ export const projects: Project[] = [
     image: "/Images/projects/attendance.jpg",
     github: "https://github.com/merhawi29/AttendanceforEmployees",
     live: "https://attendancefor-employees-zeta.vercel.app/",
-    technologies: ["Laravel", "Vue.js", "MySQL", "Bootstrap"],
-    icons: [FaLaravel, FaVuejs],
+    technologies: ["Next.js", "Node.js", "Express", "TypeScript", "Tailwind CSS", "MySQL", "Prisma"],
+    icons: [FaReact, FaNodeJs],
     features: [
       "Digital check-in/check-out system",
       "Automatic work hour calculations",
@@ -35,10 +35,10 @@ export const projects: Project[] = [
       "Responsive design for mobile and desktop"
     ],
     highlights: [
-      "Built with Laravel backend and Vue.js frontend",
-      "Real-time attendance tracking",
-      "Secure authentication and authorization",
-      "Database-driven with MySQL"
+      "Full-stack TypeScript with Next.js frontend and Node.js/Express backend",
+      "Real-time attendance tracking with JWT authentication",
+      "Role-based access control with secure token management",
+      "Database-driven with MySQL and Prisma ORM"
     ]
   },
   {
